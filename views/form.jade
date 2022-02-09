@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	form(method='POST' action='/new')
+		input(type='text' id='user' name='user' placeholder='Name')
+		input(type='textarea' id='text' name='text' placeholder='Enter Message')
+		button(type='submit' id='submit-btn')= 'Submit'
+	a(href='/')= 'Go back'

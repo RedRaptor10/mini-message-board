@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1= title
+	a(href='/new')='New Message'
+	div(id='message-board')
+		each message in messages
+			div
+				div #{message.user}
+				p #{message.text}
+				div Added on #{message.added}
+			br
