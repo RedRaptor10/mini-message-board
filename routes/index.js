@@ -1,26 +1,13 @@
 var express = require('express');
 var router = express.Router();
+const messages = require('../public/javascripts/messages');
 
-const messages = [
-	{
-		text: "Hi there!",
-		user: "Amando",
-		added: new Date()
-	},
-	{
-		text: "Hello World!",
-		user: "Charles",
-		added: new Date()
-	}
-];
-
-/* GET home page. */
+/* GET Home page. */
 router.get('/', function(req, res) {
-
 	res.render('index', { title: 'Mini Message Board', messages: messages });
 });
 
-/* GET new page. */
+/* GET New page. */
 router.get('/new', function(req, res) {
 	res.render('form', { title: 'New Post' });
 });
