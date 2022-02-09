@@ -4,12 +4,12 @@ const messages = require('../public/javascripts/messages');
 
 /* GET Home page. */
 router.get('/', function(req, res) {
-	res.render('index', { title: 'Mini Message Board', messages: messages });
+	res.render('index', { title: 'Messages', messages: messages });
 });
 
 /* GET New page. */
 router.get('/new', function(req, res) {
-	res.render('form', { title: 'New Post' });
+	res.render('form', { title: 'New Message' });
 });
 
 /* POST */

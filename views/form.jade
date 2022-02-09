@@ -1,9 +1,22 @@
 extends layout
 
 block content
-	h1= title
-	form(method='POST' action='/new')
-		input(type='text' id='user' name='user' placeholder='Name')
-		input(type='textarea' id='text' name='text' placeholder='Enter Message')
-		button(type='submit' id='submit-btn')= 'Submit'
-	a(href='/')= 'Go back'
+	header
+		h1= 'Mini Message Board'
+
+	main
+		h1= title
+		form(id='new-message-form' method='POST' action='/new')
+			label(for='user')= 'Name'
+			input(type='text' id='user' name='user' required)
+			label(for='text')= 'Message'
+			textarea(id='text' name='text' rows='4' required)
+			div(id='form-btns')
+				a(href='/')
+					button(type='button' id='back-btn')= 'Back'
+				button(type='submit' id='submit-btn')= 'Submit'
+
+	footer
+		span= 'Created through '
+			a(href='https://www.theodinproject.com')='The Odin Project'
+			=' online course.'

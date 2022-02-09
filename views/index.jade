@@ -1,12 +1,21 @@
 extends layout
 
 block content
-	h1= title
-	a(href='/new')='New Message'
-	div(id='message-board')
-		each message in messages
-			div
-				div #{message.user}
-				p #{message.text}
-				div Added on #{message.added}
-			br
+	header
+		h1= 'Mini Message Board'
+
+	main
+		a(href='/new')
+			button(id='new-message-btn')= 'New Message'
+		h1= title
+		section(id='message-board')
+			each message in messages
+				div(class='message')
+					div(class='message-user') #{message.user}
+					p(class='message-text') #{message.text}
+					div(class='message-added') Added on #{message.added}
+
+	footer
+		span= 'Created through '
+			a(href='https://www.theodinproject.com')='The Odin Project'
+			=' online course.'
